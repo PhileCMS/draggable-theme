@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="{{ base_url }}/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.site_title }} | {{ current_page.title }}</title>
+    <meta name="description" content="{{ meta.description }}" />
+    <meta name="keywords" content="{{ meta.keywords }}" />
+    {% if meta.author %}
+    <meta name="author" content="{{ meta.author }}" />
+    {% endif %}
+    <link rel="shortcut icon" href="{{ theme_url }}/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ theme_url }}/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="{{ theme_url }}/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="{{ theme_url }}/css/dragdealer.css" />
+    <link rel="stylesheet" type="text/css" href="{{ theme_url }}/css/component.css" />
+      <script src="{{ theme_url }}/js/modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header id="header" class="codrops-header">
+        <h1>{{ config.site_title }}</h1>
+        <span class="message">This mobile version does not have the slideshow switch</span>
+        <button class="slider-switch">Switch view</button>
+      </header>
+      <div id="overlay" class="overlay">
+        <div class="info">
+          <h2>Interactions</h2>
+          <span class="info-drag">Drag Sliders</span>
+          <span class="info-keys">Use Arrows</span>
+          <span class="info-switch">Switch view</span>
+          <button>Got it!</button>
+        </div>
+      </div>

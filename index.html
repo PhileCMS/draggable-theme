@@ -1,0 +1,24 @@
+{% include 'partials/header.html' %}
+<div id="slideshow" class="dragslider">
+	<section class="img-dragger img-dragger-large dragdealer">
+		<div class="handle">
+			{% for page in pages %}
+			<div class="slide" data-content="content-{{ loop.index0 + 1 }}">
+				<div class="img-wrap"><img src="{{ page.meta.image }}" alt="img1"/></div>
+				<h2 class="slide-title">{{ page.title }}</h2>
+				<button title="Read {{ page.title }}" class="content-switch">Read more</button>
+			</div>
+			{% endfor %}
+		</div>
+	</section><!-- /img-dragger-->
+	<!-- Content section -->
+	<section class="pages">
+		{% for page in pages %}
+		<div class="content" data-content="content-{{ loop.index0 + 1 }}">
+			{# <h2 class="page-title">{{ page.title }}</h2> #}
+			<div class="page-content">{{ page.content }}</div>
+		</div>
+		{% endfor %}
+	</section>
+</div>
+{% include 'partials/footer.html' %}

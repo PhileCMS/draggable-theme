@@ -1,0 +1,55 @@
+</div><!-- /container -->
+    <script src="{{ theme_url }}/js/dragdealer.js"></script>
+    <script src="{{ theme_url }}/js/dragslideshow.js"></script>
+    <script>
+      (function() {
+
+        var overlay = document.getElementById( 'overlay' ),
+          overlayClose = overlay.querySelector( 'button' ),
+          header = document.getElementById( 'header' )
+          switchBtnn = header.querySelector( 'button.slider-switch' ),
+          toggleBtnn = function() {
+            if( slideshow.isFullscreen ) {
+              switchBtnn.classList.add('view-maxi' );
+            }
+            else {
+              switchBtnn.classList.remove('view-maxi' );
+            }
+          },
+          toggleCtrls = function() {
+            if( !slideshow.isContent ) {
+              header.classList.add('hide' );
+            }
+          },
+          toggleCompleteCtrls = function() {
+            if( !slideshow.isContent ) {
+              header.classList.remove('hide' );
+            }
+          },
+          slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), {
+            // toggle between fullscreen and minimized slideshow
+            onToggle : toggleBtnn,
+            // toggle the main image and the content view
+            onToggleContent : toggleCtrls,
+            // toggle the main image and the content view (triggered after the animation ends)
+            onToggleContentComplete : toggleCompleteCtrls
+          }),
+          toggleSlideshow = function() {
+            slideshow.toggle();
+            toggleBtnn();
+          },
+          closeOverlay = function() {
+            overlay.classList.add('hide' );
+          };
+
+          setTimeout(closeOverlay, 2000);
+
+        // toggle between fullscreen and small slideshow
+        switchBtnn.addEventListener( 'click', toggleSlideshow );
+        // close overlay
+        overlayClose.addEventListener( 'click', closeOverlay );
+
+      }());
+    </script>
+  </body>
+</html>
