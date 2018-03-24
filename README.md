@@ -1,3 +1,5 @@
+**NOTE**: This repository is not maintained anymore and archived.
+
 Phile Draggable Dual-View Slideshow Theme
 =========================================
 
